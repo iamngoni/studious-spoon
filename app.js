@@ -44,12 +44,12 @@ var panes = [
 var panesApp = new Vue({
   el: "#vue-app",
   data: {
-    tiles: panes.sort(() => Math.random() - 0.5),.
+    tiles: panes.sort(() => Math.random() - 0.5),
     isOneSelected: {
       value: false,
       id: null,
       index: null
-    }
+    },
   },
   methods:{
     revealTile: function (index){
