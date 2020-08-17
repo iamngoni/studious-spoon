@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Vue.js -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
+  
+  <!-- Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.2/dist/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.2/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div id="vue-app">
+  <div class="container">
+    <div class="row">
+      <div v-for="(tile, index) in tiles" :tile="tile" :index="index" :key="tile.id" class="col-md-5 col-5 col-sm-5 h-70 bg-secondary m-1 p-2" :class="{'bg-success': tile.isRevealed}" @click="revealTile(index)">
+        <p v-if="tile.isRevealed">{{tile.name}}</p>
+        <p v-else>Fruits</p>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- Project -->
+  <script src="app.js"></script>
+</body>
+</html>
