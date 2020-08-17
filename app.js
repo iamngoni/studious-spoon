@@ -68,7 +68,7 @@ var panesApp = new Vue({
             this.tiles[this.isOneSelected.index].isRevealed = false
             this.isOneSelected.value = false
             this.isOneSelected.id = null
-            this.isOneSelected.index = null
+          .  this.isOneSelected.index = null
           }
         }else{
           alert("You selected the same tile")
