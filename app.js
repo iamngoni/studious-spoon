@@ -55,7 +55,7 @@ var panesApp = new Vue({
     revealTile: function (index){
       this.tiles[index].isRevealed = this.tiles[index].isRevealed ? false : true
       if(this.isOneSelected.value){
-        if(this.isOneSelected.index != index)
+        if(this.isOneSelected.index != index){
           if (this.isOneSelected.id == this.tiles[index].id) {
             alert("Hurray")
             this.tiles = this.tiles.filter(tile => tile.id != this.isOneSelected.id)
@@ -68,7 +68,7 @@ var panesApp = new Vue({
             this.tiles[this.isOneSelected.index].isRevealed = false
             this.isOneSelected.value = false
             this.isOneSelected.id = null
-          .  this.isOneSelected.index = null
+            this.isOneSelected.index = null
           }
         }else{
           alert("You selected the same tile")
