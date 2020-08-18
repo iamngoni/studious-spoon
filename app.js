@@ -57,13 +57,13 @@ var panesApp = new Vue({
       if(this.isOneSelected.value){
         if(this.isOneSelected.index != index){
           if (this.isOneSelected.id == this.tiles[index].id) {
-            alert("Hurray")
+            alert("Hurray🎉🎉🎊🎊")
             this.tiles = this.tiles.filter(tile => tile.id != this.isOneSelected.id)
             this.isOneSelected.value = false
             this.isOneSelected.id = null
             this.isOneSelected.index = null
           }else{
-            alert("Messed up memory")
+            alert("How unlucky😬")
             this.tiles[index].isRevealed = this.tiles[index].isRevealed ? false : true
             this.tiles[this.isOneSelected.index].isRevealed = false
             this.isOneSelected.value = false
@@ -71,7 +71,7 @@ var panesApp = new Vue({
             this.isOneSelected.index = null
           }
         }else{
-          alert("You selected the same tile")
+          alert("You selected the same tile🤦🤦")
           this.tiles[index].isRevealed = this.tiles[index].isRevealed ? false : true
           this.isOneSelected.value = false
           this.isOneSelected.id = null
