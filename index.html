@@ -18,7 +18,7 @@
   <div id="vue-app">
   <div class="container">
     <div class="row">
-      <div v-for="(tile, index) in tiles" :tile="tile" :index="index" :key="tile.id" class="col-md-5 col-5 col-sm-5 h-70 bg-secondary m-1 p-2" :class="{'bg-success': tile.isRevealed}" @click="revealTile(index)">
+      <div v-for="(tile, index) in tiles" :tile="tile" :index="index" class="col-md-5 col-5 col-sm-5 h-70 bg-secondary m-1 p-2" :class="{'bg-success': tile.isRevealed}" @click="revealTile(index)">
         <p v-if="tile.isRevealed">{{tile.name}}</p>
         <p v-else>Fruits</p>
       </div>
