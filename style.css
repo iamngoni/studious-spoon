@@ -1,0 +1,7 @@
+html{
+  scroll-behavior: smooth;
+}
+
+#tile{
+  transition: all .4s;
+}

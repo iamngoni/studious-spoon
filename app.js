@@ -50,10 +50,11 @@ var panesApp = new Vue({
       id: null,
       index: null
     },
+    touch: 0
   },
   methods:{
     revealTile: function (index){
-      console.log(index)
+      this.touch++
       if(this.isOneSelected.value){
         this.tiles[index].isRevealed = true
         if(this.isOneSelected.index != index){
@@ -85,5 +86,6 @@ var panesApp = new Vue({
         this.isOneSelected.id = this.tiles[index].id
       }
     }
-  }
+  },
+  
 })
