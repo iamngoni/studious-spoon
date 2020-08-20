@@ -50,7 +50,8 @@ var panesApp = new Vue({
       id: null,
       index: null
     },
-    touch: 0
+    touch: 0,
+    score: 0
   },
   methods:{
     revealTile: function (index){
@@ -60,6 +61,7 @@ var panesApp = new Vue({
         if(this.isOneSelected.index != index){
           if (this.isOneSelected.id == this.tiles[index].id) {
             alert("Hurray🎉🎉🎊🎊")
+            this.score++
             this.tiles = this.tiles.filter(tile => tile.id != this.isOneSelected.id)
             this.isOneSelected.value = false
             this.isOneSelected.id = null
@@ -87,5 +89,16 @@ var panesApp = new Vue({
       }
     }
   },
-  
+  computed: {
+    attempts: function(){
+      return Math.floor(this.touch / 2)
+    },
+    overalScore: function(){
+      var value = (this.score / this.attempts) * 100
+      if (isNaN(value)) {
+        return 0
+      }
+      return Math.floor(value)
+    }
+  }
 })
