@@ -1,41 +1,41 @@
 var panes = [
   {
-    name: "Banana",
+    name: "🍌",
     id: 1,
     isRevealed: false
   },
   {
-    name: "Mango",
+    name: "🥭",
     id: 2,
     isRevealed: false
   },
   {
-    name: "PawPaw",
+    name: "🍉",
     id: 3,
     isRevealed: false
   },
   {
-    name: "Grape",
+    name: "🍇",
     id: 4,
     isRevealed: false
   },
   {
-    name: "Banana",
+    name: "🍌",
     id: 1,
     isRevealed: false
   },
   {
-    name: "Mango",
+    name: "🥭 ",
     id: 2,
     isRevealed: false
   },
   {
-    name: "PawPaw",
+    name: "🍉",
     id: 3,
     isRevealed: false
   },
   {
-    name: "Grape",
+    name: "🍇",
     id: 4,
     isRevealed: false
   }
@@ -43,15 +43,30 @@ var panes = [
 
 var panesApp = new Vue({
   el: "#vue-app",
+  mounted: function(){
+    alert("Hello 👋. This app will require you to enter a username to save your score and nothing else😁")
+    this.username += prompt("Choose your username")
+    $.ajax({
+      type: 'GET',
+      url: 'http://localhost:8080/memory/get'
+    }).done((response) => {
+      this.halloffame = response
+    }).fail((response) => {
+      console.log(response)
+    })
+  },
   data: {
     tiles: panes.sort(() => Math.random() - 0.5),
+    username: '',
     isOneSelected: {
       value: false,
       id: null,
       index: null
     },
     touch: 0,
-    score: 0
+    score: 0,
+    halloffame: [],
+    hasEnded: false
   },
   methods:{
     revealTile: function (index){
@@ -87,6 +102,9 @@ var panesApp = new Vue({
         this.isOneSelected.index = index
         this.isOneSelected.id = this.tiles[index].id
       }
+    },
+    reloadPage: function(){
+      location.reload()
     }
   },
   computed: {
@@ -99,6 +117,23 @@ var panesApp = new Vue({
         return 0
       }
       return Math.floor(value)
+    }
+  },
+  watch: {
+    tiles: function(value){
+      if(value.length < 1){
+        alert("Thank you for trying out 😁")
+        this.hasEnded = true
+        $.ajax({
+          type: 'POST',
+          url: "http://localhost:8080/memory/save",
+          data: {username: this.username, score: this.overalScore}
+        }).done((response) => {
+          this.halloffame = response
+        }).fail((response) => {
+          console.log(response)
+        })
+      }
     }
   }
 })
