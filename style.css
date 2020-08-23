@@ -2,6 +2,10 @@ html{
   scroll-behavior: smooth;
 }
 
+body{
+  font-family: 'Do Hyeon', sans-serif;
+}
+
 #tile{
   transition: all .4s;
 }
