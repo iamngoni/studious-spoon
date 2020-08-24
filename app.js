@@ -5,7 +5,7 @@ var panes = [
     isRevealed: false
   },
   {
-    name: "🥭",
+    name: "🍑",
     id: 2,
     isRevealed: false
   },
@@ -25,7 +25,7 @@ var panes = [
     isRevealed: false
   },
   {
-    name: "🥭 ",
+    name: "🍑",
     id: 2,
     isRevealed: false
   },
