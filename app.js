@@ -48,7 +48,7 @@ var panesApp = new Vue({
     this.username += prompt("Choose your username")
     $.ajax({
       type: 'GET',
-      url: 'http://localhost:8080/memory/get'
+      url: 'https://iamngoni.herokuapp.com/memory/get'
     }).done((response) => {
       this.halloffame = response
     }).fail((response) => {
@@ -126,7 +126,7 @@ var panesApp = new Vue({
         this.hasEnded = true
         $.ajax({
           type: 'POST',
-          url: "http://localhost:8080/memory/save",
+          url: "https://iamngoni.herokuapp.com/memory/save",
           data: {username: this.username, score: this.overalScore}
         }).done((response) => {
           this.halloffame = response
