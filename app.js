@@ -75,19 +75,21 @@ var panesApp = new Vue({
         this.tiles[index].isRevealed = true
         if(this.isOneSelected.index != index){
           if (this.isOneSelected.id == this.tiles[index].id) {
-            alert("Hurray🎉🎉🎊🎊")
-            this.score++
-            this.tiles = this.tiles.filter(tile => tile.id != this.isOneSelected.id)
-            this.isOneSelected.value = false
-            this.isOneSelected.id = null
-            this.isOneSelected.index = null
+            setTimeout(() => {
+              this.score++
+              this.tiles = this.tiles.filter(tile => tile.id != this.isOneSelected.id)
+              this.isOneSelected.value = false
+              this.isOneSelected.id = null
+              this.isOneSelected.index = null
+            }, 500)
           }else{
-            alert("How unlucky😬")
-            this.tiles[index].isRevealed = this.tiles[index].isRevealed ? false : true
-            this.tiles[this.isOneSelected.index].isRevealed = false
-            this.isOneSelected.value = false
-            this.isOneSelected.id = null
-            this.isOneSelected.index = null
+            setTimeout(() => {
+              this.tiles[index].isRevealed = this.tiles[index].isRevealed ? false : true
+              this.tiles[this.isOneSelected.index].isRevealed = false
+              this.isOneSelected.value = false
+              this.isOneSelected.id = null
+              this.isOneSelected.index = null
+            }, 1000)
           }
         }else{
           alert("You selected the same tile🤦🤦")
