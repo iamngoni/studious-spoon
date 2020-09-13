@@ -48,7 +48,7 @@ var panesApp = new Vue({
     this.username += prompt("Choose your username")
     $.ajax({
       type: 'GET',
-      url: 'http://iamngoni-env.eba-webtmyzh.us-east-2.elasticbeanstalk.com/memory/get'
+      url: 'https://iamngoni-env.eba-webtmyzh.us-east-2.elasticbeanstalk.com/memory/get'
     }).done((response) => {
       this.halloffame = response
     }).fail((response) => {
@@ -128,7 +128,7 @@ var panesApp = new Vue({
         this.hasEnded = true
         $.ajax({
           type: 'POST',
-          url: "http://iamngoni-env.eba-webtmyzh.us-east-2.elasticbeanstalk.com/memory/save",
+          url: "https://iamngoni-env.eba-webtmyzh.us-east-2.elasticbeanstalk.com/memory/save",
           data: {username: this.username, score: this.overalScore}
         }).done((response) => {
           this.halloffame = response
