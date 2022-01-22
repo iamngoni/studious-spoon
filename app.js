@@ -1,44 +1,84 @@
 var panes = [
-  {
-    name: "🍌",
-    id: 1,
-    isRevealed: false
-  },
-  {
-    name: "🍑",
-    id: 2,
-    isRevealed: false
-  },
-  {
-    name: "🍉",
-    id: 3,
-    isRevealed: false
-  },
-  {
-    name: "🍇",
-    id: 4,
-    isRevealed: false
-  },
-  {
-    name: "🍌",
-    id: 1,
-    isRevealed: false
-  },
-  {
-    name: "🍑",
-    id: 2,
-    isRevealed: false
-  },
-  {
-    name: "🍉",
-    id: 3,
-    isRevealed: false
-  },
-  {
-    name: "🍇",
-    id: 4,
-    isRevealed: false
-  }
+    {
+        name: "🍌",
+        id: 1,
+        isRevealed: false
+    },
+    {
+        name: "🍑",
+        id: 2,
+        isRevealed: false
+    },
+    {
+        name: "🍉",
+        id: 3,
+        isRevealed: false
+    },
+    {
+        name: "🍇",
+        id: 4,
+        isRevealed: false
+    },
+    {
+        name: "🎁",
+        id: 5,
+        isRevealed: false
+    },
+    {
+        name: "🍅",
+        id: 6,
+        isRevealed: false
+    },
+    {
+        name: "🥑",
+        id: 7,
+        isRevealed: false
+    },
+    {
+        name: "🍓",
+        id: 8,
+        isRevealed: false
+    },
+    {
+        name: "🍌",
+        id: 1,
+        isRevealed: false
+    },
+    {
+        name: "🍑",
+        id: 2,
+        isRevealed: false
+    },
+    {
+        name: "🍉",
+        id: 3,
+        isRevealed: false
+    },
+    {
+        name: "🍇",
+        id: 4,
+        isRevealed: false
+    },
+    {
+        name: "🎁",
+        id: 5,
+        isRevealed: false
+    },
+    {
+        name: "🍅",
+        id: 6,
+        isRevealed: false
+    },
+    {
+        name: "🥑",
+        id: 7,
+        isRevealed: false
+    },
+    {
+        name: "🍓",
+        id: 8,
+        isRevealed: false
+    }
 ]
 
 var panesApp = new Vue({
